@@ -1,5 +1,5 @@
 import React from 'react';
-import css from './Filter.module.css';
+import './Filter.css';
 import PropTypes from 'prop-types';
 
 export default function Filter({ value, onChange }) {
