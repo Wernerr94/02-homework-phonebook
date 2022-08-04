@@ -16,6 +16,19 @@ class App extends Component {
     name: '',
     number: '',
   };
+  componentDidMount() {
+    const contacts = JSON.parse(localStorage.getItem('contacts'));
+    console.log(contacts);
+    if (contacts) {
+      this.setState({ contacts });
+    }
+  }
+
+  componentDidUpdate(_, prevState) {
+    if (this.state.contacts !== prevState.contacts) {
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
+  }
   addUserToContacts = ({ id, name, number }) => {
     const newUser = {
       id,
