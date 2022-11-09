@@ -17,7 +17,6 @@ export default class ContactForm extends Component {
       [e.target.name]: e.target.value,
       id: nanoid(),
     });
-    // console.log(this.state);
   };
   submitHandler = e => {
     e.preventDefault();
